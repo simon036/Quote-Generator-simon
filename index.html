@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+<body>
+    <button class="theme-toggle" id="themeToggle">
+        <i class="fas fa-sun"></i>
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <div class="container">
+        <div class="header">
+            <h1>Echoes Of Wisdom</h1>
+        </div>
+
+        <div class="quote-box" id="quoteBox">
+            <p class="quote-text" id="quoteText">Click the button below to generate a quote...</p>
+            <p class="quote-author" id="quoteAuthor"></p>
+            <div class="btn-group">
+                <button class="btn" id="newQuoteBtn">
+                    <i class="fas fa-sync-alt"></i> New Quote
+                </button>
+                <button class="btn" id="saveQuoteBtn">
+                    <i class="fas fa-heart"></i> Save Quote
+                </button>
+                <button class="btn" id="copyQuoteBtn">
+                    <i class="fas fa-copy"></i> Copy
+                </button>
+                <button class="btn" id="shareQuoteBtn">
+                    <i class="fas fa-share-alt"></i> Share
+                </button>
+            </div>
+        </div>
+
+        <div class="loading" id="loading">
+            <i class="fas fa-spinner fa-spin fa-2x"></i>
+        </div>
+
+        <div class="favorites-section" id="favoritesSection">
+            <h2>Saved Quotes</h2>
+            <div id="favoriteQuotes"></div>
+        </div>
+    </div>
+
+    <div class="notification" id="notification"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
