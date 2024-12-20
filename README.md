@@ -1,7 +1,7 @@
 ## Quote Generator Project
  
  ## project name Echoes of Wisdom
- 
+
  ## Project Overview
     The Quote Generator is a web application designed to inspire and motivate users by providing random inspirational quotes.
     
@@ -10,6 +10,7 @@
 ## Features
 
 a) Random Quote Generation:
+
     1.Fetch and display a new inspirational quote with the click of a button.
 
     2.Favorites Management: Save quotes to a favorites list for easy access later.
