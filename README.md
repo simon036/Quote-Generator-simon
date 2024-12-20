@@ -1,7 +1,9 @@
 ## Quote Generator Project
  
+ ## project name Echoes of Wisdom
+ 
  ## Project Overview
-    The Zen Quote Generator is a web application designed to inspire and motivate users by providing random inspirational quotes.
+    The Quote Generator is a web application designed to inspire and motivate users by providing random inspirational quotes.
     
     Users can generate new quotes, save their favorites, add notes, and toggle between light and dark themes. This project leverages the API provided by API Ninjas to fetch quotes dynamically.
 
