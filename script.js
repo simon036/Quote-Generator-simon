@@ -31,7 +31,7 @@ themeToggle.addEventListener('click', toggleTheme);
 async function generateQuote() {//function for fetching a new quote
     showLoading(); //Shows loading animation while quote is being fetched
     try {
-        const response = await fetch('https://api.api-ninjas.com/v1/quotes?category=inspirational', {
+        const response = await fetch('https://api.api-ninjas.com/v1/quotes', {
             method: 'GET', // 
             //making request to API to get quote
             headers: {
