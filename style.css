@@ -6,22 +6,26 @@
 }
 
 :root {
-    --primary-color: #F9E6CF;
-    --text-color: #000000;
-
+    --primary-color: #e0e5ec;
+    --text-color: #2d3436;
+    --shadow-light: 8px 8px 15px #a3b1c6, -8px -8px 15px #ffffff;
+    --shadow-inset: inset 4px 4px 8px #a3b1c6, inset -4px -4px 8px #ffffff;
+    --shadow-dark: 8px 8px 15px #202425, -8px -8px 15px #404648;
+    --shadow-inset-dark: inset 4px 4px 8px #202425, inset -4px -4px 8px #404648;
 }
 
 body {
-    font-family: 'Dancing script' , cursive; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--primary-color);
     color: var(--text-color);
     min-height: 100vh;
     padding: 2rem;
+    transition: background-color 0.5s ease;
 }
 
 body.dark-mode {
-    --primary-color: #000000;
-    --text-color: #F9E6CF;
+    --primary-color: #2d3436;
+    --text-color: #e0e5ec;
 }
 
 .container {
@@ -32,42 +36,38 @@ body.dark-mode {
 .header {
     text-align: center;
     margin-bottom: 2rem;
-    background-color: #52D3D8;
-    border-radius: 10px;
 }
 
-.theme-toggle, .btn {
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
     padding: 1rem;
+    border-radius: 50%;
     border: none;
-    border-radius: 10px;
     background: var(--primary-color);
     box-shadow: var(--shadow-light);
-    color: var(--text-color);
     cursor: pointer;
-    margin: 0.5rem;
+    color: var(--text-color);
 }
 
-.dark-mode .theme-toggle, .dark-mode .btn {
+.dark-mode .theme-toggle {
     box-shadow: var(--shadow-dark);
 }
 
-.quote-box,  .note-input {
-    /* background: var(--primary-color); */
-    background: #9F73AB;
+.quote-box {
+    background: var(--primary-color);
     padding: 2rem;
     border-radius: 15px;
     box-shadow: var(--shadow-light);
     margin-bottom: 2rem;
-}
-.favorite-quote{
-    background: #4F709C;
-    padding: 2rem;
-    border-radius: 15px;
-    box-shadow: var(--shadow-light);
-    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
 }
 
-
+.dark-mode .quote-box {
+    box-shadow: var(--shadow-dark);
+}
 
 .quote-text {
     font-size: 1.5rem;
@@ -80,11 +80,67 @@ body.dark-mode {
     margin-bottom: 1.5rem;
 }
 
+.btn {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 10px;
+    background: var(--primary-color);
+    box-shadow: var(--shadow-light);
+    color: var(--text-color);
+    cursor: pointer;
+    margin: 0.5rem;
+    font-size: 1rem;
+}
+
+.dark-mode .btn {
+    box-shadow: var(--shadow-dark);
+}
+
+.btn:active {
+    box-shadow: var(--shadow-inset);
+}
+
+.dark-mode .btn:active {
+    box-shadow: var(--shadow-inset-dark);
+}
+
 .btn-group {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 1rem;
+}
+
+.favorites-section {
+    margin-top: 3rem;
+}
+
+.favorite-quote {
+    background: var(--primary-color);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow-light);
+    margin-bottom: 1rem;
+    animation: slideIn 0.3s ease;
+}
+
+.dark-mode .favorite-quote {
+    box-shadow: var(--shadow-dark);
+}
+
+.note-input {
+    width: 100%;
+    padding: 0.8rem;
+    margin-top: 1rem;
+    border: none;
+    border-radius: 8px;
+    background: var(--primary-color);
+    box-shadow: var(--shadow-inset);
+    color: var(--text-color);
+}
+
+.dark-mode .note-input {
+    box-shadow: var(--shadow-inset-dark);
 }
 
 .loading {
@@ -97,6 +153,17 @@ body.dark-mode {
     display: block;
 }
 
+@keyframes slideIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
 .notification {
     position: fixed;
     bottom: 20px;
@@ -104,6 +171,7 @@ body.dark-mode {
     padding: 1rem 2rem;
     border-radius: 10px;
     background: var(--primary-color);
+    box-shadow: var(--shadow-light);
     transform: translateX(200%);
     transition: transform 0.3s ease;
 }
@@ -111,13 +179,11 @@ body.dark-mode {
 .notification.show {
     transform: translateX(0);
 }
-.note-input::placeholder {
-    color: #000000; 
-    opacity: 1; 
+
+.dark-mode .notification {
+    box-shadow: var(--shadow-dark);
 }
- .write-mode {
-        color: white; /* Change text color to white */
-    }
+
 @media (max-width: 768px) {
     .container {
         padding: 1rem;
@@ -125,7 +191,6 @@ body.dark-mode {
     
     .quote-text {
         font-size: 1.2rem;
-        
     }
     
     .btn-group {
@@ -134,5 +199,6 @@ body.dark-mode {
     
     .btn {
         width: 100%;
+        margin: 0.5rem 0;
     }
 }
