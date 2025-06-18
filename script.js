@@ -28,6 +28,8 @@ copyQuoteBtn.addEventListener('click', copyQuote);
 shareQuoteBtn.addEventListener('click', shareQuote);
 themeToggle.addEventListener('click', toggleTheme);
 
+import { API_KEY } from './config.js';
+
 async function generateQuote() {//function for fetching a new quote
     showLoading(); //Shows loading animation while quote is being fetched
     try {
@@ -35,7 +37,7 @@ async function generateQuote() {//function for fetching a new quote
             method: 'GET', // 
             //making request to API to get quote
             headers: {
-                'X-Api-Key': 'rOL1FgKBvv9N7oTjyR07yw==Sdeh7BWygvIsqJrE', //authentication for API key 
+                'X-Api-Key': API_KEY, //authentication for API key 
                 'Content-Type': 'application/json' 
             }
             
